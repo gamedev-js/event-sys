@@ -30,7 +30,7 @@ import { Node } from 'scene-graph';
 
 class EventNode extends Node {
   constructor() {
-    this.__initEmitter();
+    this.__initEventEmitter();
   }
 }
 EventEmitter.mixin(EventNode);
