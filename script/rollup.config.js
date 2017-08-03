@@ -14,7 +14,7 @@ let banner = `
 
 let dest = './dist';
 let file = 'event-sys';
-let moduleName = 'EventSys';
+let moduleName = 'eventsys';
 
 // clear directory
 fsJetpack.dir(dest, { empty: true });
