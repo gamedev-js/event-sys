@@ -655,7 +655,7 @@ tap.test('node', t => {
       constructor() {
         this.foo = 'foo';
         this.bar = 'bar';
-        this._initEmitter();
+        this.__initEmitter();
       }
     }
     EventEmitter.mixin(Foo);

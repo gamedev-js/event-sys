@@ -1,6 +1,6 @@
 {
   "name": "event-sys",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High performance event system mainly for game development.",
   "main": "dist/event-sys.js",
   "module": "index.js",
