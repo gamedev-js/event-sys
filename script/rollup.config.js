@@ -16,13 +16,17 @@ let dest = './dist';
 let file = 'event-sys';
 let name = 'eventsys';
 let sourcemap = true;
-let globals = {};
+let globals = { 'memop': 'window.memop' };
 
 // clear directory
 fsJetpack.dir(dest, { empty: true });
 
 module.exports = {
   input: './index.js',
+  external: [],
+  plugins: [
+    buble(),
+  ],
   output: [
     {
       file: `${dest}/${file}.dev.js`,
@@ -30,7 +34,7 @@ module.exports = {
       name,
       banner,
       globals,
-      sourcemap,
+      sourcemap
     },
     {
       file: `${dest}/${file}.js`,
@@ -38,11 +42,7 @@ module.exports = {
       name,
       banner,
       globals,
-      sourcemap,
+      sourcemap
     },
   ],
-  external: [],
-  plugins: [
-    buble(),
-  ]
 };

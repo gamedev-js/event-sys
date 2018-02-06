@@ -34,9 +34,7 @@
   "devDependencies": {
     "fs-jetpack": "^0.13.2",
     "rollup": "^0.54.1",
-    "rollup-watch": "^3.2.2",
     "rollup-plugin-buble": "^0.18.0",
-    "rollup-plugin-commonjs": "^8.2.6",
     "tap": "^10.3.0",
     "uglify-js": "^3.3.7"
   },
