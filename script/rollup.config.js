@@ -7,29 +7,41 @@ const pjson = require('../package.json');
 let banner = `
 /*
  * ${pjson.name} v${pjson.version}
- * (c) ${new Date().getFullYear()} @Johnny Wu
+ * (c) ${new Date().getFullYear()} @gamedev-js
  * Released under the MIT License.
  */
 `;
 
 let dest = './dist';
 let file = 'event-sys';
-let moduleName = 'eventsys';
+let name = 'eventsys';
+let sourcemap = true;
+let globals = {};
 
 // clear directory
 fsJetpack.dir(dest, { empty: true });
 
 module.exports = {
-  entry: './index.js',
-  targets: [
-    { dest: `${dest}/${file}.dev.js`, format: 'iife' },
-    { dest: `${dest}/${file}.js`, format: 'cjs' },
+  input: './index.js',
+  output: [
+    {
+      file: `${dest}/${file}.dev.js`,
+      format: 'iife',
+      name,
+      banner,
+      globals,
+      sourcemap,
+    },
+    {
+      file: `${dest}/${file}.js`,
+      format: 'cjs',
+      name,
+      banner,
+      globals,
+      sourcemap,
+    },
   ],
-  moduleName,
-  banner,
   external: [],
-  globals: {},
-  sourceMap: true,
   plugins: [
     buble(),
   ]
